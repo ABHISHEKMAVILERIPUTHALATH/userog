@@ -5,6 +5,7 @@
 </style>
     <meta charset="UTF-8">
     <title>eatC</title>
+    <script src="loadProducts.js" defer></script>
     <link rel="icon" sizes="192x192" href="logoo.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -15,6 +16,69 @@
 </head>
 
 <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        *{
+            font-family: Poppins;
+        }
+        #popup{
+            background: #fff;
+            box-shadow: 5px 5px 5px #00000015;
+            border: none;
+            border-radius: 8px;
+        }
+        #popup::backdrop{
+            backdrop-filter: blur(5px);
+        }
+        .list-items{
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        .place{
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            justify-content: space-around;
+        }
+        #popup{
+            /* display: flex; */
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            margin-left: 38%;
+            margin-top: 7%;
+
+        }        
+        #popup .cancel{
+            width: 72px;
+    height: 31px;
+    position: absolute;
+    right: 32px;
+    top: 31px;
+    /* margin-left: 104px; */
+    color: red;
+        }
+        #popup img{
+            width: 300px;
+            height: 300px;
+        }
+        .buy
+        {
+        margin-top: 10px;
+    margin-left: 36%;
+    width: 108px;
+    /* height: 1000%; */
+    background-color: lawngreen;
+    padding: 0px;
+    font-size: 27px;
+        }
+    </style>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -149,1015 +213,11 @@
                           </li>
                         </ul>
                       </div>
-                      
-                    <div id="pizza" style="margin-top:30px">
-    <div class="restaurant-list">
-                        <div class="place">
-                            <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Pepperoni Pizza" src="pepparoni.jpg" width="254" height="160">
-                                        </div>
-                                        <div class="status" style="
-                                        background: rgb(58, 60, 65);
-                                        color: rgb(255, 255, 255);
-                                        border-color: rgb(30, 32, 35) transparent;">
-                                            <div class="status-title">Promoted</div>
-                                        </div>
-                                    
-                                        <div class="place-name-div">
-                                            <div class="name">Pepperoni Pizza</div>
-                                            <div class="food-items" title=" title=" italian,="" pizzas,="" fast="" food,="" mexican,="" desserts,="" beverages="">
-                                            A delicious classic with zesty tomato sauce, gooey melted cheese, and spicy slices of pepperoni.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>3.8</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">14 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹199 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Bercos - If you love chinese" src="Margherita.webp" width="254" height="160">
-                                        </div>
-                                        
-                                        <div class="place-name-div">
-                                            <div class="name">Margheritta Pizza</div>
-                                            <div class="food-items" title="Chinese, Thai, Asian, Beverages, Desserts, Oriental, Seafood, Pan-Asian">Classic simplicity with fresh tomato sauce, melted mozzarella, and fragrant basil on a thin crust</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.0</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">10 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹500 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Wack Waffles &amp; Brownies" src="BBQ Chicken Pizza.jpg" width="254" height="160">
-                                        </div>
-                                        <div class="status" style="
-                                        background: rgb(58, 60, 65);
-                                        color: rgb(255, 255, 255);
-                                        border-color: rgb(30, 32, 35) transparent;">
-                                            <div class="status-title">Promoted</div>
-                                        </div>
-                                        <div class="place-name-div">
-                                            <div class="name">BBQ Chicken Pizza</div>
-                                            <div class="food-items" title="Waffle, Bakery, Desserts, Beverages">Tangy barbecue sauce, succulent chicken, melted cheese, and flavorful toppings on a crispy crust—a delightful combination.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>3.9</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">10 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹250 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Takeout Cafe" src="Neapolitan Pizza.jpg" width="254" height="160">
-                                        </div>
-                                        
-                                        <div class="place-name-div">
-                                            <div class="name">Neopolitan Pizza</div>
-                                            <div class="food-items" title="Italian-American, Fast Food, Snacks, Beverages">Thin, chewy crust topped with tomato sauce, fresh mozzarella, and fragrant basil— a classic Italian delight</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>5.0</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">6 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹200 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        </div>
-
-                      </div>
-                      <div id="popcorn" style="margin-top: -100px;">
                         <div class="restaurant-list">
-                                            <div class="place">
-                                                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Healthy Bhukkad's" src="https://faydayarar.com/wp-content/uploads/2020/01/patlamis-misirin-faydalari-icindeki-vitaminler-zayiflama-ve-seker.jpg" width="254" height="160">
-                                                            </div>
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name">Buttered Popcorn</div>
-                                                                <div class="food-items"
-                                                                title="Fast Food, Snacks, Beverages">A classic favorite with the perfect balance of freshly popped corn and rich, melted butter.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.7</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">3 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹199 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Momo Mom by Oriental Mom" src="Cheese Popcorn.jpeg" width="254" height="160">
-                                                            </div>
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name">Cheese Popcorn</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">Savory and addictive, this popcorn is generously coated with a deliciously cheesy flavor.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.2</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">8 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹200 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Momo Mom by Oriental Mom" src="Caramel Popcorn.jpg" width="254" height="160">
-                                                            </div>
-                                                           
-                                                            <div class="place-name-div">
-                                                                <div class="name">Caramel Popcorn</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">A delightful sweet treat, caramel popcorn is coated with a sticky and buttery caramel glaze</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.1</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">7 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹200 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="sss" alt="Momo Mom by Oriental Mom" src="Nachos with Cheese.jpg" width="254" height="160">
-                                                            </div>
-                                                          
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name"> Nachos with Cheese</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">Crispy tortilla chips topped with melty cheese sauce—a delicious and addictive movie theater snack.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">10 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹320 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            </div>
-                                            <div id="burger" style="margin-top:-100px">
-                                                <div class="restaurant-list">
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="" alt="Momo Mom by Oriental Mom" src="Classic Cheeseburge.jpeg" width="254" height="160">
-                                                            </div>
-                                                           
-                                                            <div class="place-name-div">
-                                                                <div class="name">Classic Cheese burger</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">Juicy beef patty, melted cheese, and fresh toppings— the epitome of a timeless favorite.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.6</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">12 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹400 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Momo Mom by Oriental Mom" src="Bacon Cheeseburger.webp" width="254" height="160">
-                                                            </div>
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name">Bacon Cheeseburger</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">Irresistibly delicious with a juicy beef patty, melted cheese, crispy bacon, and all the classic fixings.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.5</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">10 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹400 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Momo Mom by Oriental Mom" src="BBQ Burge.jpg" width="254" height="160">
-                                                            </div>
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name">BBQ Burger</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese">BBQ Burger: Grilled patty, tangy BBQ sauce, melted cheese, caramelized onions, and crispy bacon</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.8</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">12 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹400 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="place">
-                                                <a href="" class="place-link">
-                                                    <div class="list-item">
-                                                        <div class="item-content">
-                                                            <div class="top-img">
-                                                                <img class="image-section" alt="Momo Mom by Oriental Mom" src="Veggie Burge.jpg" width="254" height="160">
-                                                            </div>
-                                                            
-                                                            <div class="place-name-div">
-                                                                <div class="name">Veggie Burger</div>
-                                                                <div class="food-items"
-                                                                title="Pan-Asian, Tibetan, Seafood, Chinese"> A flavorful plant-based alternative packed with wholesome ingredients, offering a satisfying and delicious meat-free option.</div>
-                                                            </div>
-                                                            <div class="info-div">
-                                                                <div class="rating">
-                                                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                                    <span>4.1</span>
-                                                                </div>
-                                                                <div>•</div>
-                                                                <div class="delivery">10 MINS</div>
-                                                                <div>•</div>
-                                                                <div class="price">₹300 FOR TWO</div>
-                                                            </div>
-                                                            <div class="offer-div">
-                                                                <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                                                <span class="offer-text">50% off | Use WELCOME50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="quick-view">
-                                                            <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                                </div>
-                                            </div>
-                                            
-                                 
-                                            
                         
-                        <div id="hotdog" style="margin-top: -100px;">
-                        <div class="restaurant-list">
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Momo Mom by Oriental Mom" src="https://streetmeattoronto.com/wp-content/uploads/2020/04/Hotdog-black-background-2048x1251.jpg" width="254" height="160">
-                                        </div>
-                                        
-                                        <div class="place-name-div">
-                                            <div class="name">All-beef hot dog</div>
-                                            <div class="food-items"
-                                            title="Pan-Asian, Tibetan, Seafood, Chinese"> a delectable sausage made exclusively from ground beef, expertly seasoned, and served in a fresh bun</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.3</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">20 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹410FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Momo Mom by Oriental Mom" src="https://aartimadan.com/wp-content/uploads/2020/08/Veg-hot-dog.jpg" width="254" height="160">
-                                        </div>
-                                       
-                                        <div class="place-name-div">
-                                            <div class="name">Vegetarian/Vegan Hot Dog</div>
-                                            <div class="food-items"
-                                            title="Pan-Asian, Tibetan, Seafood, Chinese"> compact-sized meat-free alternative that captures the essence of a traditional hot dog using plant-based ingredient</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.9</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">15 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹340 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://thekaisergroup.com.au/wp-content/uploads/2017/04/hot-dogs-image.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Chicken-hot dog</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream"> Ideal for those seeking a lighter option, chicken or turkey hot dogs are made from poultry meat</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.8</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">15 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://i.pinimg.com/736x/ee/f2/b7/eef2b7a5455fc47646cb617b0defa389.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Chicken Sandwich</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Quench your thirst and enhance your meal with the classic and refreshing taste of Coca-Cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.4</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">10 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹200 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        </div>
-                        
-                        <div id="drinks" style="margin-top: -100px;">
-                            <div class="restaurant-list">
-                            
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://dailytophealth.com/wp-content/uploads/sites/18/2019/02/cfarmafotoshutterstock_339569408.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">coco cola</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Quench your thirst and enhance your meal with the classic and refreshing taste of Coca-Cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.3</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">5 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹150 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://fthmb.tqn.com/c_fOJKx2HGsETLLqUL6tifjmUEM=/4896x3264/filters:fill(auto,1)/can-and-glass-of-pepsi-cola-487787086-5ad64304c5542e00363644bd.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Pepsi</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">The effervescent bubbles dance on your palate, providing a refreshing sensation that pairs perfectly with your favorite meals</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.1</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">2 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹100 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="" src="https://4.bp.blogspot.com/-rLAwNxQqzOM/UZg_dZeETyI/AAAAAAAAEqc/MQ2axHPwNSw/s1600/7-up+cans+compaired.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">7-Up</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">7 Up is a lemon-lime flavored carbonated beverage that provides a zesty and thirst-quenching experience.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.7</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">2 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹130 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://cdnimg.webstaurantstore.com/images/products/extra_large/546349/2004641.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Fanta</div>
-                                            <div class="food-items"
-                                            title="Itm">sparkling soft drink that offers a vibrant and exhilarating taste adventure, available in a variety of fruit-inspired flavors</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.5</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">3 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹90 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        </div>
-
-
-
-
-
-
-
-
-                        <div id="icecream" style="margin-top: -100px;">
-                            <div class="restaurant-list">
-                            <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://www.simplysated.com/wp-content/uploads/2014/08/Homemade-Vanilla-Ice-Cream-22-1-P7270022.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Vanilla Ice cream</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Smooth, creamy, and infused with the delightful essence of vanilla</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.1</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">10 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹100 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                            </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://www.tasteofhome.com/wp-content/uploads/2018/03/exps8708_C2640C49B_RMS.jpg" width="254" height="160">
-                                            
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Strawberry Ice cream</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">tantalizes the taste buds with its creamy texture and irresistible starwberry flavor, offering a delightful indulgence for stawberry lovers.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>3.9</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">10 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹120 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                            
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://ashleemarie.com/wp-content/uploads/2014/02/homemade-chocolate-ice-cream-recipe.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Chocolate Ice cream</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">tantalizes the taste buds with its creamy texture and irresistible cocoa flavor, offering a delightful indulgence for chocolate lovers.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.2</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">5 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹140 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://images3.alphacoders.com/916/916832.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Popsicle</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Popsicle,delightful way to cool down and enjoy a burst of flavor on a hot day.</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.5</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">5 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹80 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        </div>
-                        <div id="combo" style="margin-top: -100px;">
-                            <div class="restaurant-list">
-                            <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://d12n9cpx6835mo.cloudfront.net/3pc_Wicked-Wings_Combo_web_thumb.jpg?v=138.3" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Combo</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">French fries, paired with flavorful and tender chicken nuggets, all complemented by the refreshing fizz of a cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.8</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">15 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                       
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="http://www.finewebstores.com/assets/images/HFA/newpopcorncolaasst_923_general.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Combo</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">buttery and salty popcorn, perfectly complemented by the fizzy and refreshing taste of a cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4.4</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">15 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://grande-prairie.shopl.net/assets/media/uploads/product/60564e5e4a317_grilledhotdogcombo.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Combo</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Perfect combination of a juicy and flavorful hot dog, crispy and golden French fries, all accompanied by a refreshing cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>4</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">12 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="place">
-                            <a href="" class="place-link">
-                                <div class="list-item">
-                                    <div class="item-content">
-                                        <div class="top-img">
-                                            <img class="image-section" alt="Firangi Bake" src="https://www.savespree.com/images/offers/108389/save-with-the-large-five-piece-crispy-tenders-combo-at-wingstop-1-max.jpg" width="254" height="160">
-                                        </div>
-                                      
-                                        <div class="place-name-div">
-                                            <div class="name">Combo</div>
-                                            <div class="food-items"
-                                            title="Italian, Mexican, Pastas, Ice Cream">Savor the ultimate trio of crispy French fries, delectable chicken nuggets, and a refreshing cola</div>
-                                        </div>
-                                        <div class="info-div">
-                                            <div class="rating">
-                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
-                                                <span>3.9</span>
-                                            </div>
-                                            <div>•</div>
-                                            <div class="delivery">13 MINS</div>
-                                            <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
-                                        </div>
-                                        <div class="offer-div">
-                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
-                                            <span class="offer-text">50% off | Use WELCOME50</span>
-                                        </div>
-                                    </div>
-                                    <div class="quick-view">
-                                        <span role="button" aria-label="Open" class="view-btn">BUY NOW</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
             
                         
                         </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -1203,14 +263,27 @@
             </div>
         </footer>
     </div>
+    <dialog id="popup">
+        <h1 id="head">popcorn</h1>
+        <button class="cancel" onclick="document.getElementById('popup').close()">Cancel</button>
+       <img id="product_img" src="../image/Bacon Cheeseburger.jpg" alt="">
+       <h2  id="price">rate</h2>
+       <input class="count_box" type="number"  placeholder="enter the count" min="1" required>
+       <input  class="seat" type="text" maxlength="3" placeholder="eg:E2" required>
+       <br>
+       <button class="buy" onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser)">Buy</button>
+</dialog>
 
     <script defer>
         let user = firebase.auth().currentUser;
         var selected=null;
+        
         firebase.auth().onAuthStateChanged((user)=>{
-            const usernameElement = document.getElementById('username');
-            usernameElement.innerHTML=user.displayName
-            document.getElementById('dp').src=user.photoURL;
+            if(user){
+                const usernameElement = document.getElementById('username');
+                usernameElement.innerHTML=user.displayName
+                document.getElementById('dp').src=user.photoURL;
+            }
         })
         function logout(){
             firebase.auth().signOut()
@@ -1222,6 +295,14 @@
       console.log(error);
     });
 }
+function showPopup(name,image,price){
+            selected={name,price}
+            document.getElementById('popup').showModal();
+            document.getElementById('head').innerHTML=name
+            document.getElementById('product_img').src=image
+            document.getElementById('price').innerHTML=price
+
+        }
 </script>       
 </body>
 </html>
