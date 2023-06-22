@@ -15,6 +15,21 @@
 </head>
 
 <body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+              apiKey: "AIzaSyAhsLFXuGPA_uP42iTcUSR1x4sZyhWCbzU",
+              authDomain: "eatc-fd3bd.firebaseapp.com",
+              projectId: "eatc-fd3bd",
+              storageBucket: "eatc-fd3bd.appspot.com",
+              messagingSenderId: "1053136450043",
+              appId: "1:1053136450043:web:751c9fcf12c9a408719b5e"
+            };
+            firebase.initializeApp(firebaseConfig);
+            firebase.auth();
+      </script>
     <div class="main-container">
         <!-- Navbar Section -->
         <header class="navbar">
