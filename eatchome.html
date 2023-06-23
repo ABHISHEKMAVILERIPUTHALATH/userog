@@ -303,6 +303,18 @@ function showPopup(name,image,price){
             document.getElementById('price').innerHTML=price
 
         }
+        var db=firebase.firestore();
+        function writeorder(count,seat,email) {
+            console.log(count);
+            db.collection('orders').doc().set({
+            item:selected.name,
+            price:selected.price,
+            count,
+            seat:seat.toUpperCase(),
+            email:email.email
+
+         });
+}
 </script>       
 </body>
 </html>
