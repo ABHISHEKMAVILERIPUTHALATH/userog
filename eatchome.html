@@ -271,7 +271,7 @@
        <input class="count_box" type="number"  placeholder="enter the count" min="1" required>
        <input  class="seat" type="text" maxlength="3" placeholder="eg:E2" required>
        <br>
-       <button class="buy" onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser)">Buy</button>
+       <button class="buy" id="buy-button"   onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser)">Buy</button>
 </dialog>
 
     <script defer>
@@ -303,6 +303,14 @@ function showPopup(name,image,price){
             document.getElementById('price').innerHTML=price
 
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            var buyButton = document.getElementById('buy-button');
+            buyButton.addEventListener('click', function() {
+                window.location.href = 'payment.html'; // Replace 'target-page.html' with your desired page URL
+            });
+        });
+
+        
 </script>       
 </body>
 </html>
