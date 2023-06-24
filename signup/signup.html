@@ -5,21 +5,57 @@
   <link rel="stylesheet" type="text/css" href="../login/st.css">
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+          apiKey: "AIzaSyAhsLFXuGPA_uP42iTcUSR1x4sZyhWCbzU",
+          authDomain: "eatc-fd3bd.firebaseapp.com",
+          projectId: "eatc-fd3bd",
+          storageBucket: "eatc-fd3bd.appspot.com",
+          messagingSenderId: "1053136450043",
+          appId: "1:1053136450043:web:751c9fcf12c9a408719b5e"
+        };
+        firebase.initializeApp(firebaseConfig);
+  </script>
   <div class="login-box">
     <h1>Create an account</h1>
-    <form>
+    <form id="signup-form">
       <div class="textbox">
-        <input type="text" placeholder="Full name" name="fullname" required>
+        <input id="fieldname" type="text" placeholder="Full name" name="fullname" required>
       </div>
       <div class="textbox">
-        <input type="text" placeholder="Email" name="email" required>
+        <input id="fieldemail" type="email" placeholder="Email" name="email" required>
       </div>
       <div class="textbox">
-        <input type="password" placeholder="Password" name="password" required>
+        <input id="fieldpass" type="password" placeholder="Password" name="password" required>
       </div>
-      <input class="btn0" type="submit" value="Sign up">
+      <button type="submit" class="btn0">SIGNUP</button>
       <p class="signup-link">Already have an account? <a href="../login/login.html">Sign in</a></p>
     </form>
   </div>
+<script>
+  const name = document.getElementById('fieldname');
+  const email = document.getElementById('fieldemail');
+  const password = document.getElementById('fieldpass');
+  
+  document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+    firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+    .then((userCredential) => {
+      // Signed in 
+      var user = userCredential.user;
+      alert("sucessful")
+      window.location.href="../login/login.html";
+      // alert("heeey");
+      // ...
+    })
+    .catch((error) => {;
+      alert(error.message)
+    });
+  } );
+
+
+</script>
 </body>
 </html>
