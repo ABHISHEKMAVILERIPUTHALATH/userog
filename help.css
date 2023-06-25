@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .left-container {
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    float: left;
+  }
+  
+  .left-container nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .left-container nav ul li {
+    padding: 10px;
+  }
+  
+  .left-container nav ul li:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .right-container {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  
+  header, main {
+    margin-bottom: 20px;
+  }
+  .faq
+  {
+    font-size:19px;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  footer {
+    clear: both;
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+  }
+  .boxhead a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}  
