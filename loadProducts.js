@@ -110,7 +110,7 @@
                     firebase.auth().signOut()
                     .then(()=>{
                     alert("you are signing out");
-                    window.location.href=".index.html"
+                    window.location.href="index.html"
             })
             .catch(function(error) {
               console.log(error);

@@ -283,11 +283,12 @@
         <button class="buy" onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser),document.getElementById('popup').close(),document.getElementById('payment').showModal()">Buy</button>
         <button class="cancel" onclick="document.getElementById('popup').close()">Cancel</button>
 </dialog>
-
+<div style="display: flex;justify-content: center;">
     <dialog id="payment" style="height: 47vh; width: 44vh; margin: 7% 0 0 39%; border: none; border-radius: 10px;">
-        <img src="qr" alt="">
+        <img  src="./images/qr.jpg" width="100%" height="90%" alt="" >
         <button class="cancel" onclick="paymentsucess()">cancel</button>
     </dialog>
+</div>
 <script>
     function paymentsucess(){
         document.getElementById('payment').close();
