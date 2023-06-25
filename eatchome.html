@@ -30,6 +30,9 @@
         #popup::backdrop{
             backdrop-filter: blur(5px);
         }
+        #payment::backdrop{
+            backdrop-filter: blur(5px);
+        }
         .list-items{
             box-sizing: border-box;
             display: flex;
@@ -57,26 +60,32 @@
         }        
         #popup .cancel{
             width: 72px;
-    height: 31px;
-    position: absolute;
-    right: 32px;
-    top: 31px;
-    /* margin-left: 104px; */
-    color: red;
+            height: 31px;
+            position: absolute;
+            right: 20px;
+            bottom:18px;
+            /* margin-left: 104px; */
+            color: red;
+            border: none;
+            border-radius: 10px;
         }
         #popup img{
             width: 300px;
             height: 300px;
         }
         .buy
-        {
-        margin-top: 10px;
-    margin-left: 36%;
-    width: 108px;
-    /* height: 1000%; */
-    background-color: lawngreen;
-    padding: 0px;
-    font-size: 27px;
+        {   border: none;
+            border-radius: 10px;
+            width: 72px;
+            height: 31px;
+            
+            /* position: absolute; */
+            color: green;
+            margin-top: 8px;
+            /* right: 32px; */
+            /* top: 31px; */
+            /* left: 10px;
+            bottom: 15px; */
         }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
@@ -94,6 +103,7 @@
             firebase.initializeApp(firebaseConfig);
             firebase.auth();
       </script>
+
     <div class="main-container">
         <!-- Navbar Section -->
         <header class="navbar">
@@ -109,7 +119,7 @@
                             <li>
                                 <div class="search-bar">
                                     <i class="fas fa-search search-icon"></i>
-                                    <input class="search-input" type="text" placeholder="Search your favorite food">
+                                    <input class="search-input" type="text" placeholder="Search your favorite food" oninput="search(event)">
                                   </div>
                             </li>
                             <li>
@@ -169,15 +179,15 @@
                         <div class="filters">
 
                             <a href="#" id="sort-by-delivery">
-                                <div class="delivery">Delivery Time</div></a>
+                                <div onclick="deliverytime()" class="delivery">Delivery Time</div></a>
                             <a href="#" id="sort-by-rating">
-                            <div class="rating">Rating</div></a>
+                            <div class="rating" onclick="rating()">Rating</div></a>
                           
                               
                                 <a href="#" id="sort-low-to-high">
-                            <div class="cost-lh">Cost: Low to High</div></a>
+                            <div onclick="lowtohigh()" class="cost-lh">Cost: Low to High</div></a>
                             <a href="#" id="sort-high-to-low">
-                                <div class="cost-hl">Cost: High to Low</div></a>
+                                <div class="cost-hl" onclick="hightolow()">Cost: High to Low</div></a>
                         </div>
                     </div>
                     <div class="inspiration">
@@ -265,64 +275,28 @@
     </div>
     <dialog id="popup">
         <h1 id="head">popcorn</h1>
+        <img id="product_img" src="../image/Bacon Cheeseburger.jpg" alt="">
+        <h2  id="price">rate</h2>
+        <input class="count_box" type="number"  placeholder="enter the count" min="1" required>
+        <input  class="seat" type="text" maxlength="3" placeholder="Seat number eg:E2" required>
+        <br>
+        <button class="buy" onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser),document.getElementById('popup').close(),document.getElementById('payment').showModal()">Buy</button>
         <button class="cancel" onclick="document.getElementById('popup').close()">Cancel</button>
-       <img id="product_img" src="../image/Bacon Cheeseburger.jpg" alt="">
-       <h2  id="price">rate</h2>
-       <input class="count_box" type="number"  placeholder="enter the count" min="1" required>
-       <input  class="seat" type="text" maxlength="3" placeholder="eg:E2" required>
-       <br>
-       <button class="buy" onclick="writeorder(document.querySelector('.count_box').value,document.querySelector('.seat').value,firebase.auth().currentUser)">Buy</button>
 </dialog>
 
-    <script defer>
-        let user = firebase.auth().currentUser;
-        var selected=null;
-        
-        firebase.auth().onAuthStateChanged((user)=>{
-            if(user){
-                const usernameElement = document.getElementById('username');
-                usernameElement.innerHTML=user.displayName
-                document.getElementById('dp').src=user.photoURL;
-            }
-        })
-        function logout(){
-            firebase.auth().signOut()
-            .then(function() {
-            alert("you are signing out");
-            window.location.href="../login/login.html"
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-}
-function showPopup(name,image,price){
-            selected={name,price}
-            document.getElementById('popup').showModal();
-            document.getElementById('head').innerHTML=name
-            document.getElementById('product_img').src=image
-            document.getElementById('price').innerHTML=price
+    <dialog id="payment" style="height: 47vh; width: 44vh; margin: 7% 0 0 39%; border: none; border-radius: 10px;">
+        <img src="qr" alt="">
+        <button class="cancel" onclick="paymentsucess()">cancel</button>
+    </dialog>
+<script>
+    function paymentsucess(){
+        document.getElementById('payment').close();
+        alert("payment sucessfull");
 
-        }
-        var db=firebase.firestore();
-        function writeorder(count,seat,email) {
-            console.log(count);
-            db.collection('orders').doc().set({
-            item:selected.name,
-            price:selected.price,
-            count,
-            seat:seat.toUpperCase(),
-            email:email.email
-
-         });
-}
-</script>       
+    }
+</script>
 </body>
 </html>
-
-
-
-
-<script src="home.js"></script>
 
 
 

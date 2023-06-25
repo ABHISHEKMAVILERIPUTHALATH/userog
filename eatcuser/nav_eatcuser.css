@@ -1,0 +1,68 @@
+nav{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+    margin:0;
+    position: relative;
+}
+nav a{
+    position: relative;
+    left: 2%;
+    text-decoration: none;
+    
+}
+nav input{
+    position:relative;
+    left: 9%;
+    width: 27%;
+    height: 60%;
+    align-items: flex-end;
+    margin-top: .87%;
+    padding-left: 25px;
+}
+ 
+nav div{
+    position:absolute;
+    display: flex;
+    right: 10px;
+    border: 1px soldi black;
+    height: 45px;
+    margin-top: .5%;
+    box-sizing: border-box;
+    width: 140px;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+}
+.curve{
+    border-radius: 17px;
+}
+nav img{
+    height:30px;
+    margin-bottom: 0;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+nav a p{
+    margin-top: 0;
+    color: black;
+    text-decoration: none ;
+}
+.online{
+    color: #21BB1E ;
+}
+.offline{
+    color:#21BB1E ;
+}
+.online:hover{
+    color: darkgreen;
+    transform: scale(1.2);
+}
+.offline:hover{
+    color: darkgreen;
+    transform: scale(1.2);
+}
+
