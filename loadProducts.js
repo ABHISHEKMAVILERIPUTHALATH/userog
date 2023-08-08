@@ -82,7 +82,7 @@
                 }
 
                 function rating(){
-                    p.sort((a,b)=>a.data().rating-b.data().rating);
+                    p.sort((a,b)=>b.data().rating-a.data().rating);
                     products.innerHTML="",
                     p.forEach(e=>renderDocument(e));
                 }
